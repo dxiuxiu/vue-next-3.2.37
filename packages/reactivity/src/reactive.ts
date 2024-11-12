@@ -88,6 +88,7 @@ export type UnwrapNestedRefs<T> = T extends Ref ? T : UnwrapRefSimple<T>
  */
 export function reactive<T extends object>(target: T): UnwrapNestedRefs<T>
 export function reactive(target: object) {
+  debugger
   // if trying to observe a readonly proxy, return the readonly version.
   if (isReadonly(target)) {
     return target

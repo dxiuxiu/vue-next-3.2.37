@@ -86,6 +86,7 @@ function createArrayInstrumentations() {
 }
 
 function createGetter(isReadonly = false, shallow = false) {
+  debugger
   return function get(target: Target, key: string | symbol, receiver: object) {
     if (key === ReactiveFlags.IS_REACTIVE) {
       return !isReadonly
@@ -148,6 +149,7 @@ const set = /*#__PURE__*/ createSetter()
 const shallowSet = /*#__PURE__*/ createSetter(true)
 
 function createSetter(shallow = false) {
+  debugger
   return function set(
     target: object,
     key: string | symbol,
